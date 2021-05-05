@@ -1,0 +1,30 @@
+body {
+  font-family: "Roboto";
+}
+
+header {
+  background-color: #cf2b2b;
+  color: #fff;
+  height: 92px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 6px 0 0 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+header h1 {
+  font-family: "righteous";
+  font-size: 44px;
+  line-height: 55px;
+}
+
+header p {
+  font-size: 18px;
+}
+
+main {
+  margin-top: 92px;
+}
