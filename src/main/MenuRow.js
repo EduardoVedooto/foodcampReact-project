@@ -1,9 +1,6 @@
 import Item from "./Item";
 
 export default function MenuRow(props) {
-    const list = props.items;
-    console.log(list);
-    console.log(typeof(list));
     return(
         <>
             <h2>{props.sectionTitle}</h2>

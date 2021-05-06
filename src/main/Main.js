@@ -12,18 +12,18 @@ const sections = [
                 value: "R$ 39,90"
             },
             {
-                imgLink: "assets/images/lasanha.jpg",
-                imgDescription: "Imagem do prato",
-                title: "Lasanha",
-                description: "Lasanha bolonhesa",
-                value: "R$ 29,90"
-            },
-            {
                 imgLink: "assets/images/hamburguer.jpg",
                 imgDescription: "Imagem do prato",
                 title: "Hamburguer",
                 description: "Hamburguer tradicional com porção de fritas",
                 value: "R$ 24,85"
+            },
+            {
+                imgLink: "assets/images/lasanha.jpg",
+                imgDescription: "Imagem do prato",
+                title: "Lasanha",
+                description: "Lasanha bolonhesa",
+                value: "R$ 29,90"
             }
         ]
     },
