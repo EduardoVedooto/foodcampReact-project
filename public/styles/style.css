@@ -26,8 +26,8 @@ header p {
 }
 
 main {
-  margin-top: 92px;
-  padding-top: 31px;
+  margin: 92px 0;
+  padding: 31px 0 16px 0;
   background-color: #e5e5e5;
 }
 
@@ -44,7 +44,12 @@ ul {
   overflow-x: scroll;
 }
 
+ul:last-child {
+  margin-bottom: 0;
+}
+
 ul li {
+  height: 220px;
   margin: 0 8px;
   padding: 16px 14px;
   background-color: #fff;
@@ -75,8 +80,31 @@ ul li p {
   font-size: 15px;
   color: #a6a6a6;
   word-break: break-word;
+  margin: auto 0;
 }
 
 ul li div.value {
   margin-top: auto;
+}
+
+footer {
+  background-color: #fff;
+  height: 92px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer button {
+  width: 90%;
+  height: 61px;
+  border: none;
+  outline: none;
+  border-radius: 50px;
+  font-size: 20px;
+  color: #fff;
 }
