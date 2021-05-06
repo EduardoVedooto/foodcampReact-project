@@ -1,14 +1,22 @@
+import Item from "./Item";
+
 export default function MenuRow(props) {
+    const list = props.items;
+    console.log(list);
+    console.log(typeof(list));
     return(
         <>
-            <h2>{props.title}</h2>
+            <h2>{props.sectionTitle}</h2>
             <ul>
-                <li>
-                    <img href={props.imgLink} alt={props.imgDescription}/>
-                    <h3>{props.title}</h3>
-                    <p>{props.description}</p>
-                    <span>{props.value}</span>
-                </li>
+                {props.items.map(item => (
+                    <Item 
+                        imgLink={item.imgLink}
+                        imgDescription={item.imgDescription}
+                        title={item.title}
+                        description={item.description}
+                        value={item.value}
+                    />
+                ))}
             </ul>
         </>
     );

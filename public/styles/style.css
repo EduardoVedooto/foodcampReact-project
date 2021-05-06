@@ -27,4 +27,56 @@ header p {
 
 main {
   margin-top: 92px;
+  padding-top: 31px;
+  background-color: #e5e5e5;
+}
+
+h2 {
+  margin-left: 20px;
+  font-size: 26px;
+  font-family: "righteous";
+  color: #333;
+}
+
+ul {
+  display: flex;
+  margin: 15px 0;
+  overflow-x: scroll;
+}
+
+ul li {
+  margin: 0 8px;
+  padding: 16px 14px;
+  background-color: #fff;
+  border-radius: 9px;
+  display: flex;
+  flex-direction: column;
+}
+
+ul li:first-child {
+  margin-left: 20px;
+}
+
+ul li img {
+  width: 144px;
+  height: 87px;
+  border-radius: 4px;
+}
+
+ul li h3 {
+  font-size: 16px;
+  color: #333;
+  font-weight: 700;
+  margin: 5px 0;
+}
+
+ul li p {
+  font-weight: 300;
+  font-size: 15px;
+  color: #a6a6a6;
+  word-break: break-word;
+}
+
+ul li div.value {
+  margin-top: auto;
 }
