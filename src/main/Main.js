@@ -3,6 +3,7 @@ import MenuRow from "./MenuRow";
 const sections = [
     {
         sectionTitle: "Primeiro, seu prato",
+        section: "food",
         menu: [
             {
                 imgLink: "assets/images/Pizza.jpg",
@@ -29,6 +30,7 @@ const sections = [
     },
     {
         sectionTitle: "Agora sua bebida",
+        section: "drink",
         menu: [
             
             {
@@ -56,6 +58,7 @@ const sections = [
     },
     {
         sectionTitle: "Por fim, sua sobremesa",
+        section: "dessert",
         menu: [
             {
                 imgLink: "assets/images/sorvete.jpg",
@@ -88,6 +91,7 @@ export default function Main() {
             {sections.map(section => (
                 <MenuRow 
                     sectionTitle={section.sectionTitle}
+                    section={section.section}
                     items={section.menu}
                 />
             ))}

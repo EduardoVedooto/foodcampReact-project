@@ -1,14 +1,16 @@
 import Item from "./Item";
-import Item2 from "./Item2";
 
 export default function MenuRow(props) {
     
+    const {sectionTitle, section, items} = props;
+
     return(
         <>
-            <h2>{props.sectionTitle}</h2>
+            <h2>{sectionTitle}</h2>
             <ul>
-                {props.items.map(item => (
-                    <Item2 
+                {items.map(item => (
+                    <Item
+                        section={section}
                         imgLink={item.imgLink}
                         imgDescription={item.imgDescription}
                         title={item.title}
