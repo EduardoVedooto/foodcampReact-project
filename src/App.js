@@ -108,13 +108,17 @@ export default function App() {
             ]
         }
     ]);
+    const [active, setActive] = React.useState(false);
+
     
+
     console.log(sections[1].menu[0].qnt);
 
     function increment(indexRow, index) {
         sections[indexRow].menu[index].qnt++;
         sections[indexRow].menu[index].isSelected = true;
         setSections([...sections]);
+        activateButton();
     }
 
     function decrement(indexRow, index) {
@@ -128,13 +132,27 @@ export default function App() {
             sections[indexRow].menu[index].qnt--;
         }
         setSections([...sections]);
+        activateButton();
     }
+
+    function activateButton() {
+        const isFoodSelected = sections[0].menu.filter((item) => item.isSelected);
+        const isDrinkSelected = sections[1].menu.filter((item) => item.isSelected);
+        const isDessertSelected = sections[2].menu.filter((item) => item.isSelected);   
+        if(isFoodSelected.length > 0 && isDrinkSelected.length > 0 && isDessertSelected.length > 0) {
+            setActive(true);
+        } else {
+            setActive(false);
+        }
+    }
+    
+    
 
     return(
         <>
             <Header />
             <Main sections={sections} increment={increment} decrement={decrement}/>
-            <Footer />
+            <Footer isActive={active}/>
         </>
     );
 }

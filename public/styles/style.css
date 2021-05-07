@@ -157,8 +157,9 @@ footer button {
   background-color: #cbcbcb;
 }
 
-footer button .finalization {
+footer button.finalization {
   background-color: #32b72f;
+  font-weight: bold;
 }
 
 footer button.hidden {

@@ -1,4 +1,4 @@
-export default function Item2(props){
+export default function Item(props){
 
     const {
         imgLink,
