@@ -1,44 +1,35 @@
-import React from "react";
+export default function Item2(props){
 
-export default function Item(props){
-    
-    const {section, imgLink, imgDescription, title, description, value} = props;
-
-    const [select, setSelect] = React.useState("");
-    const [qnt, setQnt] = React.useState(0);
+    const {
+        imgLink,
+        imgDescription,
+        title,
+        description,
+        value,
+        quantity,
+        isSelected,
+        increment,
+        decrement,
+        index,
+        indexRow,
+    } = props;
 
     function selectItem() {
-        if(select === "") increment();
-        setSelect("selected");
-    }
-
-    function decrement() {
-        if(qnt === 1) {
-            setSelect("");
-        }
-        else setQnt(qnt - 1);
-        sessionStorage.setItem(section, Number(sessionStorage.getItem(section)) - 1);
-        console.log(sessionStorage);
-    }
-
-    function increment() {
-        setQnt(qnt + 1);
-        sessionStorage.setItem(section, Number(sessionStorage.getItem(section)) + 1);
-        console.log(sessionStorage);
+        if(!isSelected) increment(indexRow, index);
     }
 
     return(
-        <li className={select}>
+        <li className={isSelected ? "selected" : ""}>
             <div className="content" onClick={selectItem}>
                 <img src={imgLink} alt={imgDescription}/>
                 <h3>{title}</h3>
                 <p>{description}</p>
-                <div className="value">{value}</div>
+                <div className="value">{`R$ ${(value.toFixed(2))}`}</div>
             </div>
-            <div className={`qnt ${select === "" || qnt === 0 ? "hidden" : ""}`}>
-                <div className="minus" onClick={decrement}>-</div>
-                <div>{qnt}</div>
-                <div className="plus" onClick={increment}>+</div>
+            <div className={`qnt ${isSelected ? "" : "hidden"}`}>
+                <div className="minus" onClick={() => decrement(indexRow, index)}>-</div>
+                <div>{quantity}</div>
+                <div className="plus" onClick={() => increment(indexRow, index)}>+</div>
             </div>
         </li>
     );
