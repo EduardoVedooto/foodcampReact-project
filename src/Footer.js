@@ -8,7 +8,7 @@ export default function Footer({isActive}) {
                 Selecione os 3 itens <br/>
                 para fechar o pedido
             </button>
-            <button className={`finalization ${isActive ? "" : "hidden"}`} onClick={}>
+            <button className={`finalization ${isActive ? "" : "hidden"}`}>
                 Fechar pedido
             </button>
         </footer>
