@@ -4,45 +4,27 @@ export default function Item(props){
     
     const {section, imgLink, imgDescription, title, description, value} = props;
 
-    const [food, setFood] = React.useState(0);
-    const [drink, setDrink] = React.useState(0);
-    const [dessert, setDessert] = React.useState(0);
-
     const [select, setSelect] = React.useState("");
-    const [qnt, setQnt] = React.useState(1);
+    const [qnt, setQnt] = React.useState(0);
 
     function selectItem() {
-        if(section === "food" && select === ""){
-            setFood(food + 1);
-            console.log("Número de pratos: " + (food + 1));
-        } else if(section === "drink" && select === ""){
-            setDrink(drink + 1);
-            console.log("Número de bebidas: " + (drink + 1));
-        } else if(section === "dessert" && select === ""){
-            setDessert(dessert + 1);
-            console.log("Número de sobremesas: " + (dessert+1));
-        }
+        if(select === "") increment();
         setSelect("selected");
     }
 
     function decrement() {
-        if(qnt === 1) setSelect("");
+        if(qnt === 1) {
+            setSelect("");
+        }
         else setQnt(qnt - 1);
-        set
+        sessionStorage.setItem(section, Number(sessionStorage.getItem(section)) - 1);
+        console.log(sessionStorage);
     }
 
     function increment() {
         setQnt(qnt + 1);
-        if(section === "food") {
-            setFood(food + 1);
-            console.log("Número de pratos " + (food+1));
-        } else if(section === "drink"){
-            setDrink(drink + 1);
-            console.log("Número de bebidas " + (drink+1));
-        } else if(section === "dessert"){
-            setDessert(dessert + 1);
-            console.log("Número de sobremesas " + (dessert+1));
-        }
+        sessionStorage.setItem(section, Number(sessionStorage.getItem(section)) + 1);
+        console.log(sessionStorage);
     }
 
     return(
